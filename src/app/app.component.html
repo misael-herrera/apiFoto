@@ -1,22 +1,22 @@
 
-<div class="container text-center">  
-  <h1>Álbum fotográfico</h1>
+<div class="container text-center" style="
+background-image: url('https://mdbootstrap.com/img/new/standard/city/041.jpg');
+height: 100%;
+">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >Álbum fotográfico</a>
+    </li>    
+  </ul>  
 
-<div id="divCarousel" class="carousel slide" data-ride="carousel">
+<div id="divCarousel" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
-    <div *ngFor="let ft of fotos;let item=index" class="carousel-item" [ngClass]="{'active' : item==0}">
-      <div class="col-md-12">
+    <div *ngFor="let ft of fotos;let item=index" class="carousel-item" [ngClass]="{'active' : item==0}">      
         <img class="img-fluid" src={{ft.url}} alt={{ft.title}}>
-        <div class="text-center h-100 opacity-25">
-          <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-md-left">
-                  <h4 class="text-black">Album  {{ft.albumId}}</h4>
-                  <p class="mb-0 text-black-50">{{ft.title}}</p>
-                  <hr class="d-none d-md-block mb-0 ms-0">
-              </div>
-          </div>
-      </div>
-      </div>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Album  {{ft.albumId}}</h5>
+          <p>{{ft.title}}</p>
+        </div>        
     </div>
     
   </div>
